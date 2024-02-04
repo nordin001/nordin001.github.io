@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_844af74d1c94b9ea553c7360d1c564dc {
+                    position: absolute;
+                    width: 50.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d5bd3b139b70524cf43f3136146d2bbf {
+                    position: absolute;
+                    width: 50.0%;
+                    height: 100.0%;
+                    left: 50.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/jieter/Leaflet.Sync/L.Map.Sync.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_844af74d1c94b9ea553c7360d1c564dc" ></div>
+        
+    
+            <div class="folium-map" id="map_d5bd3b139b70524cf43f3136146d2bbf" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_844af74d1c94b9ea553c7360d1c564dc = L.map(
+                "map_844af74d1c94b9ea553c7360d1c564dc",
+                {
+                    center: [38.9, -0.28],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_8c25ab81c838affc942b21d16bb8471c = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_844af74d1c94b9ea553c7360d1c564dc);
+        
+    
+            var tile_layer_fa5855ac82734fc16500d2855d684301 = L.tileLayer(
+                "https://earthengine.googleapis.com/v1/projects/data-starlight-4133180/maps/50d3550590c7dfcd8e3bee7a4c9f111c-c5d32071e1a92bbefcc8701fcde89230/tiles/{z}/{x}/{y}",
+                {"attribution": "Thomas de Groot \u0026 Tallal Noureddine......Tecnologias de la Informacion Geografica", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_844af74d1c94b9ea553c7360d1c564dc);
+        
+    
+            var tile_layer_40b4a5e00d665de910f8f21584e60af8 = L.tileLayer(
+                "https://earthengine.googleapis.com/v1/projects/data-starlight-4133180/maps/fb6282d04f8e6eda2e002a0209c82d42-b6dad62c0910d00201dbb831998e7af0/tiles/{z}/{x}/{y}",
+                {"attribution": "Thomas de Groot \u0026 Tallal Noureddine......Tecnologias de la Informacion Geografica", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_844af74d1c94b9ea553c7360d1c564dc);
+        
+    
+            var layer_control_006d823ad48894d2969c9a4a98e20c70 = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_8c25ab81c838affc942b21d16bb8471c,
+                },
+                overlays :  {
+                    "MNDWI_pre" : tile_layer_fa5855ac82734fc16500d2855d684301,
+                    "MNDWI_post" : tile_layer_40b4a5e00d665de910f8f21584e60af8,
+                },
+            };
+            L.control.layers(
+                layer_control_006d823ad48894d2969c9a4a98e20c70.base_layers,
+                layer_control_006d823ad48894d2969c9a4a98e20c70.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_844af74d1c94b9ea553c7360d1c564dc);
+        
+    
+            var map_d5bd3b139b70524cf43f3136146d2bbf = L.map(
+                "map_d5bd3b139b70524cf43f3136146d2bbf",
+                {
+                    center: [38.9, -0.28],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_cf620cb3c548e6ffa3c1fe8cff17f39b = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_d5bd3b139b70524cf43f3136146d2bbf);
+        
+    
+            var tile_layer_9bee50c506e4c670cd7f1fae70e128fc = L.tileLayer(
+                "https://earthengine.googleapis.com/v1/projects/data-starlight-4133180/maps/50d3550590c7dfcd8e3bee7a4c9f111c-f95c0c4624e38ceac115ffa19d7c82d8/tiles/{z}/{x}/{y}",
+                {"attribution": "Thomas de Groot \u0026 Tallal Noureddine......Tecnologias de la Informacion Geografica", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_d5bd3b139b70524cf43f3136146d2bbf);
+        
+    
+            var tile_layer_1f7f7c9733c9c0cd5c95dc7f1d0608d2 = L.tileLayer(
+                "https://earthengine.googleapis.com/v1/projects/data-starlight-4133180/maps/fb6282d04f8e6eda2e002a0209c82d42-d6f17bc0fd5020797e178f92f425854c/tiles/{z}/{x}/{y}",
+                {"attribution": "Thomas de Groot \u0026 Tallal Noureddine......Tecnologias de la Informacion Geografica", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_d5bd3b139b70524cf43f3136146d2bbf);
+        
+    
+            map_844af74d1c94b9ea553c7360d1c564dc.sync(map_d5bd3b139b70524cf43f3136146d2bbf);
+            map_d5bd3b139b70524cf43f3136146d2bbf.sync(map_844af74d1c94b9ea553c7360d1c564dc);
+        
+    
+            var layer_control_1ed3563b0c034c9cac7b4093a502fbcb = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_cf620cb3c548e6ffa3c1fe8cff17f39b,
+                },
+                overlays :  {
+                    "MNDWIL_pre" : tile_layer_9bee50c506e4c670cd7f1fae70e128fc,
+                    "MNDWIL_post" : tile_layer_1f7f7c9733c9c0cd5c95dc7f1d0608d2,
+                },
+            };
+            L.control.layers(
+                layer_control_1ed3563b0c034c9cac7b4093a502fbcb.base_layers,
+                layer_control_1ed3563b0c034c9cac7b4093a502fbcb.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_d5bd3b139b70524cf43f3136146d2bbf);
+        
+</script>
+</html>

@@ -1,0 +1,25 @@
+var wms_layers = [];
+
+var format_COMBINACION_0 = new ol.format.GeoJSON();
+var features_COMBINACION_0 = format_COMBINACION_0.readFeatures(json_COMBINACION_0, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_COMBINACION_0 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_COMBINACION_0.addFeatures(features_COMBINACION_0);
+var lyr_COMBINACION_0 = new ol.layer.Vector({
+                declutter: true,
+                source:jsonSource_COMBINACION_0, 
+                style: style_COMBINACION_0,
+                interactive: true,
+                title: '<img src="styles/legend/COMBINACION_0.png" /> COMBINACION'
+            });
+
+lyr_COMBINACION_0.setVisible(true);
+var layersList = [lyr_COMBINACION_0];
+lyr_COMBINACION_0.set('fieldAliases', {'CODE_18': 'CODE_18', 'AREA_HA': 'AREA_HA', 'DESCRIPCIO': 'DESCRIPCIO', 'fid': 'fid', 'DN': 'DN', });
+lyr_COMBINACION_0.set('fieldImages', {'CODE_18': 'TextEdit', 'AREA_HA': 'TextEdit', 'DESCRIPCIO': 'TextEdit', 'fid': 'TextEdit', 'DN': 'TextEdit', });
+lyr_COMBINACION_0.set('fieldLabels', {'CODE_18': 'no label', 'AREA_HA': 'no label', 'DESCRIPCIO': 'no label', 'fid': 'no label', 'DN': 'no label', });
+lyr_COMBINACION_0.on('precompose', function(evt) {
+    evt.context.globalCompositeOperation = 'normal';
+});
